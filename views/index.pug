@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        link(rel='stylesheet', href='/public/styles.css')
+        title='World Guesser'
+    body
+        div(class='form-container')
+            h1 Попробуй угадать загадонное слово!
+            form(action="/" method="post")
+                input(type="text", name='suggestedWord', id='suggestedWord')
+                input(type="submit", value="Отправить")
+                p= result
+
