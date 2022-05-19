@@ -3,12 +3,13 @@ import mongoose from 'mongoose'
 import dotenv from "dotenv";
 import router from './router.js'
 
+dotenv.config()
 
 const DB_CONNECTION = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.evkqc.mongodb.net/?retryWrites=true&w=majority`
 const PORT = process.env.PORT || 5000;
 const app = new express();
 
-dotenv.config()
+
 
 app.use('/public', express.static('public'))
 app.use(express.json())
