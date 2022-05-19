@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'
 import Word from './Word.js'
 
-mongoose.connect('mongodb+srv://HollyOne:qazqaz123@cluster0.evkqc.mongodb.net/?retryWrites=true&w=majority')
+
+dotenv.config()
+
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.evkqc.mongodb.net/?retryWrites=true&w=majority`)
 
 const seedWords = [
     {name: 'Тузик'},
@@ -9,7 +13,8 @@ const seedWords = [
     {name: 'Магистраль'},
     {name: 'Дорога'},
     {name: 'Ключ'},
-    {name: 'Идея'}
+    {name: 'Идея'},
+    {name: 'Свежесть'}
 ]
 
 const seed = async () => {
