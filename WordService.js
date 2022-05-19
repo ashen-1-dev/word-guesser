@@ -24,7 +24,6 @@ class WordService {
     async showHint(suggestedWord) {
         var hint
         let randomHint = getRandomProperty(hints_type)
-        console.log(randomHint)
         if(hints_type.WORD_LENGTH === randomHint)
             hint = await this.compareLength(suggestedWord)
         if(hints_type.SHOW_LETTER === randomHint) {
@@ -46,7 +45,7 @@ class WordService {
     }
 
      async showRandomLetter() {
-        let random = getRandomInt(0, await this.trueWord.length)
+        let random = getRandomInt(1, await this.trueWord.length)
         return random + ' буква: \'' + this.trueWord.charAt(random - 1) + '\'';
     }
 
